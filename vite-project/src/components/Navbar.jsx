@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-blue-600 shadow-lg">
+    <nav className="bg-blue-600 shadow-lg px-6 md:px-0">
       <div className="max-w-3xl mx-auto ">
         <div className="flex justify-between items-center h-16">
           {/* Logo or Brand Name */}
@@ -21,12 +21,7 @@ export default function Navbar() {
             >
               Home
             </a>
-            <a
-              href="/"
-              className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition duration-200"
-            >
-              About
-            </a>
+           
             
           </div>
 
