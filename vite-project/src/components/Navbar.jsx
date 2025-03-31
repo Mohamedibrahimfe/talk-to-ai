@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from 'react-router-dom'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,18 +10,18 @@ export default function Navbar() {
           {/* Logo or Brand Name */}
           <div className="flex-shrink-0">
             <a href="/" className="text-white text-xl font-bold">
-              Talk To AI
+              CusTomIzeD AIs
             </a>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-4">
-            <a
+            <link
               href="/"
               className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition duration-200"
             >
               Home
-            </a>
+            </link>
            
             
           </div>
