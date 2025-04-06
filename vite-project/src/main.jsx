@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import './index.css'
 import { MyAis } from "./pages/MyAis";
+import ImageGenerator from "./pages/ImageGenerator";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -22,8 +23,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="my-ais" element={<MyAis/>} />
+            <Route path="/chat/:aiId" element={<Home />} />
+            <Route path="my-ais" element={<MyAis />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="generator" element={<ImageGenerator />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
