@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <>
       <nav className="bg-gray-800 p-4 text-white flex justify-between items-center">
-        <h1>CustomIzed AIs</h1>
+        <h1 className="text-orange-600 text-bold text-2xl">CustomIzeD AIs</h1>
         <div className="flex items-center gap-8">
           <ul className="flex gap-8">
             <li>
@@ -16,6 +16,9 @@ const Layout = () => {
             </li>
             <li>
               <NavLink className={({ isActive }) => (isActive ? "text-orange-600 font-bold" : "hover:text-orange-600")} to="/my-ais">My AIs</NavLink>
+            </li>
+            <li>
+              <NavLink className={({ isActive }) => (isActive ? "text-orange-600 font-bold" : "hover:text-orange-600")} to="/generator" >Image Gen </NavLink>
             </li>
             <li>
               <NavLink className={({ isActive }) => (isActive ? "text-orange-600 font-bold" : "hover:text-orange-600")} to="/contact">Contact</NavLink>
