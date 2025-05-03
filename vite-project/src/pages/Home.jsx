@@ -94,7 +94,7 @@ const Home = () => {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg mb-4"
+            className="w-full p-3 border border-blue-700 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
             placeholder="Type your message here..."
             required
             autoFocus
@@ -102,7 +102,7 @@ const Home = () => {
           />
           <button
             type="submit"
-            className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-700 transition-colors hover:animate-pulse"
+            className="w-full bg-blue-600 text-white p-3 rounded-lg transition-colors"
             disabled={loading}
           >
             {loading ? "Sending..." : "Send"}
@@ -126,7 +126,7 @@ const Home = () => {
                   {" "}{message.userInput}
                 </p>
               </div>
-              <div className="bg-gray-300 text-gray-800 p-4 rounded-lg">
+              <div className="bg-gray-800 text-white p-4 rounded-lg">
                 {message.aiRole && (
                   <div className="flex items-center gap-2 text-gray-300  ">
                     <span className="text-sm font-medium">Expert: {message.aiRole}</span>

@@ -33,7 +33,7 @@ const Contact = () => {
                 id="name"
                 name="name"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border-1 p-1 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
             <div>
@@ -45,7 +45,7 @@ const Contact = () => {
                 id="email"
                 name="email"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border-1 p-1 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               />
             </div>
             <div>
@@ -57,7 +57,7 @@ const Contact = () => {
                 name="message"
                 rows="5"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border-1 p-1 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               ></textarea>
             </div>
             <button

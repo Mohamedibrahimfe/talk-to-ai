@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <>
       <nav className="bg-gray-800 p-4 text-white flex justify-between items-center">
-        <h1 className="text-orange-600 text-bold text-2xl">CustomIzeD AIs</h1>
+        <h1 className="text-orange-600 font-bold text-2xl hover:font-extrabold hover:cursor-pointer">CustomIzeD AIs</h1>
         <div className="flex items-center gap-8">
           <ul className="flex gap-8">
             <li>
