@@ -3,8 +3,7 @@ const callImageGenerator = async (text) => {
 
     try {
         const response = await fetch(
-            // "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-dev",
-            "https://api-inference.huggingface.co/models/CompVis/stable-diffusion-v1-4",
+            "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
             {
                 method: "POST",
                 headers: {
@@ -16,11 +15,11 @@ const callImageGenerator = async (text) => {
                 body: JSON.stringify({
                     inputs: text,
                     parameters: {
-                        negative_prompt: "blurry, bad quality, black image",
-                        num_inference_steps: 50,
+                        negative_prompt: "blurry, bad quality, black image, distorted, deformed",
+                        num_inference_steps: 30,
                         guidance_scale: 7.5,
-                        width: 512,
-                        height: 512
+                        width: 768,
+                        height: 768
                     }
                 }),
                 mode: "cors",

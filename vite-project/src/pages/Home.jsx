@@ -119,16 +119,16 @@ const Home = () => {
         {/* Update Message History Section */}
         <div className="mb-8 space-y-4">
           {messageHistory.map((message, index) => (
-            <div key={index} className="border-b pb-4">
-              <div className="bg-gray-50 py-4 rounded-lg mb-2">
+            <div key={index}>
+              <div className="rounded-lg py-2">
                 <p className="text-gray-600">
                   <span className="font-semibold text-gray-700">You:</span>
                   {" "}{message.userInput}
                 </p>
               </div>
-              <div className="bg-gray-600 text-white p-4 rounded-lg">
+              <div className="bg-gray-300 text-gray-800 p-4 rounded-lg">
                 {message.aiRole && (
-                  <div className="flex items-center gap-2 text-gray-300 mb-3 pb-2 border-b border-gray-500">
+                  <div className="flex items-center gap-2 text-gray-300  ">
                     <span className="text-sm font-medium">Expert: {message.aiRole}</span>
                     <div className="flex flex-wrap gap-1">
                       {message.expertise?.map((skill, idx) => (
