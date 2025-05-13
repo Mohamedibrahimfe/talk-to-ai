@@ -1,7 +1,28 @@
 import React from "react";
+import SEO from "../components/SEO";
 const Contact = () => {
+  const metaData = {
+    title: "Contact Us | Customized AIs",
+    description: "Get in touch with us for any inquiries or support.",
+    keywords: "contact, support, inquiries, Customized AIs",
+    image: "",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: "Contact Us",
+      description: "Get in touch with us for any inquiries or support.",
+      url: window.location.href,
+    },
+  };
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <SEO
+        title={metaData.title}
+        description={metaData.description}
+        keywords={metaData.keywords}
+        image={metaData.image}
+        schema={metaData.schema}
+      />
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Contact Us</h1>
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 grid md:grid-cols-2 gap-8">

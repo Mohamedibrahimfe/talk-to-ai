@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import fetchDataFromAi from "../components/fetchDataFromAi";
+import SEO from "../components/SEO";
 export const MyAis = () => {
     const navigate = useNavigate();
     const [customChats, setCustomChats] = useState([]);
@@ -76,8 +77,28 @@ export const MyAis = () => {
         setShowAddForm(false);
     };
 
+        const metaData = {
+        title: "My AIs | CustomIzeD AIs",
+        description: "Explore and interact with specialized AI assistants tailored for various domains.",
+        keywords: "AI assistants, custom AI, specialized AI, web development, software architecture",
+        image: "https://example.com/image.jpg",
+        schema: {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "My AIs",
+            "description": "Explore and interact with specialized AI assistants tailored for various domains.",
+            "url": window.location.href,
+            "image": "https://example.com/image.jpg",
+            "mainEntity": {
+                "@type": "WebSite",
+                "name": "CustomIzeD AIs",
+                "url": window.location.origin,
+                "description": "Explore and interact with specialized AI assistants tailored for various domains."
+            }}
+        }
     return (
         <div className="container mx-auto px-4 py-8">
+            <SEO title={metaData.title} description={metaData.description} keywords={metaData.keywords} image={metaData.image} schema={metaData.schema}/>
             <div className="flex justify-between items-center mb-8">
                 <h1 className="text-3xl font-bold">Specialized AI Assistants</h1>
                 <button

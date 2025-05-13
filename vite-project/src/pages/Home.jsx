@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import fetchDataFromAi from "../components/fetchDataFromAi";
 import TypeWriter from "typewriter-effect";
 import { useParams } from 'react-router-dom';
+import SEO from "../components/SEO";
 
 const Home = () => {
   const { aiId } = useParams();  // Add this line to get the aiId from URL params
@@ -48,8 +49,30 @@ const Home = () => {
     }
   }
 
+  const metaData = {
+    title: selectedAI ? `Ask ${selectedAI.title}` : "CustomIzeD AIs",
+    description: selectedAI
+      ? `Chat with ${selectedAI.title} and get expert advice on ${selectedAI.expertise.join(', ')}.`
+      : "How can I help you?",
+    keywords: selectedAI
+      ? `${selectedAI.expertise.join(', ')}, AI, chat, expert advice`
+      : "AI, chat, expert advice",
+    image: selectedAI ? selectedAI.image : "",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: selectedAI ? `Ask ${selectedAI.title}` : "CustomIzeD AIs",
+      description: selectedAI
+        ? `Chat with ${selectedAI.title} and get expert advice on ${selectedAI.expertise.join(', ')}.`
+        : "How can I help you?",
+      url: window.location.href,
+      image: selectedAI ? selectedAI.image : "",
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+      <SEO title={metaData.title} description={metaData.description} keywords={metaData.keywords} image={metaData.image} schema={metaData.schema} />
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6">
         {selectedAI && (
           <div className="flex flex-col gap-2 mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">

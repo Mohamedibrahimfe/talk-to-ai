@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import callImageGenerator from "../components/callImageGenerator";
 import ErrorBoundary from "../components/ErrorBoundary";
+import SEO from "../components/SEO";
 
 const ImageGeneratorContent = () => {
   const [prompt, setPrompt] = useState("");
@@ -42,8 +43,29 @@ const ImageGeneratorContent = () => {
     document.body.removeChild(link);
   };
 
+  const metaData = {
+    title: "CustomizedAIs | AI Image Generator",
+    description: "Generate stunning images using AI technology. Enter a description and let our AI create unique images for you.",
+    keywords: "AI image generator, image generation, AI art, custom images",
+    image: generatedImage ? generatedImage.url : "",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "AI Image Generator",
+      description: "Generate stunning images using AI technology. Enter a description and let our AI create unique images for you.",
+      url: window.location.href,
+      image: generatedImage ? generatedImage.url : "",
+      mainEntity: {
+        "@type": "ImageObject",
+        contentUrl: generatedImage ? generatedImage.url : "",
+        description: prompt,
+        name: "Generated Image",
+      }
+    }
+  }
   return (
-    <div className="container mx-auto p-4 max-w-3xl">
+    <div className="container mx-auto p-4 max-w-3xl" >
+      <SEO title={metaData.title} description={metaData.description} image={metaData.image} keywords={metaData.keywords} schema={metaData.schema} />
       <div className="fixed top-0 left-0 mt-20 w-[400px] h-screen bg-white shadow-md p-4 rounded-md mb-6">
         <h1 className="text-3xl font-bold mb-6 text-center">
           AI Image Generator
@@ -126,19 +148,22 @@ const ImageGeneratorContent = () => {
         <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-md">
           <p className="text-red-600">{error}</p>
         </div>
-      )}
+      )
+      }
 
-      {generatedImage && (
-        <div className="mt-6 space-y-4">
-          <img
-            src={generatedImage.url}
-            alt="Generated"
-            className="max-w-full h-auto rounded-lg shadow-lg"
-            loading="lazy"
-          />
-        </div>
-      )}
-    </div>
+      {
+        generatedImage && (
+          <div className="mt-6 space-y-4">
+            <img
+              src={generatedImage.url}
+              alt="Generated"
+              className="max-w-full h-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        )
+      }
+    </div >
   );
 };
 
